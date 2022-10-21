@@ -24,3 +24,9 @@ for(int i = 0; i < 5; i++)
 {
     System.Console.WriteLine("!!!");
 }
+
+int a = 5;
+
+bool isNumberEquals5 = a == 5; 
+
+if(!isNumberEquals5);
