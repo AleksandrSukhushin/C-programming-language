@@ -5,7 +5,7 @@
 // (число умноженное на само себя).
 
 System.Console.WriteLine("Введите значение: ");
-int number = int.Parse(Console.ReadLine());
+int number = int.Parse(Console.ReadLine()!);
 
 Console.WriteLine($"Квадрат числа = {number * number}");
 
