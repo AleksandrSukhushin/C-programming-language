@@ -1,42 +1,45 @@
 ﻿// Задача 15. Напишите программу, которая принимает на вход цифру, обозначающую день недели,
 // и проверяет, является ли этот день выходным.
 
-int NumberDayWeek(int number)
+int DayWeek(int number)
 {
-        if (number > 5 && number < 7)
+    if (number> 0 && number < 8)
+    {
+        if (number == 7 || number == 6)
         {
-            System.Console.WriteLine("Выходной день :)");
+            System.Console.WriteLine("Ура, выходной!");
         }
         else
         {
-            System.Console.WriteLine("К сожалению, будний :(");
+            System.Console.WriteLine("Увы, будний.");
         }
+    }
+    else
+    {
+        System.Console.WriteLine("Упс, ошибка, введите число от 1 до 7");
+    }
     return number;
 }
-int myNumber = 62;
-System.Console.WriteLine(NumberDayWeek(myNumber));
+int myNumber = 8;
+System.Console.WriteLine(DayWeek(myNumber));
 
+// Не могу никак избавиться от того, чтобы на выходе программа не выдавала вводное значение.
+// Попытался изначально поковырять массив, но успехом не увенчалось :(
 
-//System.Console.WriteLine("Введите номер дня недели от 1 до 7");
-
-
-
-// string[] DayWeek = new string[8];
-// int UserChoice;
-
-// DayWeek[1] = "Будний день";
-// DayWeek[2] = "Будний день";
-// DayWeek[3] = "Будний день";
-// DayWeek[4] = "Будний день";
-// DayWeek[5] = "Будний день";
-// DayWeek[6] = "Выходной день";
-// DayWeek[7] = "Выходной день";
-
-// do
+// int[] DayWeek = {1,2,3,4,5,6,7}; 
+// int n = DayWeek.Length;
+// int index = 0;
+// while(index < n)
 // {
-//     System.Console.WriteLine("Введите номер дня недели: ");
-//     UserChoice = int.Parse(Console.ReadLine()!);
-//     System.Console.WriteLine(DayWeek[UserChoice]);
+//     if(DayWeek[index] == 6 || DayWeek[index] == 7)
+//     {
+//         System.Console.WriteLine("Выходной");
+//     }
+//     else
+//     {
+//         System.Console.WriteLine("Будний");
+//     }
+//     index ++;
 // }
-// while (UserChoice > 0 && UserChoice < 8);
-
+// int number = 6;
+// System.Console.WriteLine(DayWeek[number]);
