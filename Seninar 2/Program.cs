@@ -1,10 +1,14 @@
-﻿// Семинар 2. Решение задач
-
-// № задачи   Name branch
-//      1 - main
-//      2 - task_2
-//      3 - task_3
+﻿// Семинар 2. Решение задач по теме Массивы и Функции
 
 // Задача 1. Напишите программу, которая принимает на вход трехзначное число 
 //и на выходе показывает последнюю цифру этого числа.
 
+int GetLastDigit(int number);
+{
+    int lastDigit = number % 10;
+    return lastDigit;
+}
+int testNumber = 5123;
+int lastDigit = GetLastDigit(testNumber);
+
+System.Console.WriteLine();
