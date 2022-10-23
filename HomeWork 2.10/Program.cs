@@ -6,5 +6,5 @@ int GetTwoDigit(int number)
     int TwoDigit = (number % 100) / 10;
     return TwoDigit;
 }
-int myNumber = 456;
+int myNumber = 918;
 Console.WriteLine(GetTwoDigit(myNumber));
