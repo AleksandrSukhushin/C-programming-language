@@ -3,11 +3,11 @@
 
 void CoordinateRange(int numberRange)
 {
-    if(numberRange == 1) System.Console.WriteLine("Диапазон координат (+Х; +Y)");
-    else if(numberRange == 2) System.Console.WriteLine("Диапазон координат (-X; +Y)");
-    else if(numberRange == 3) System.Console.WriteLine("Диапазон координат (-X; -Y)");
-    else if(numberRange == 4) System.Console.WriteLine("Диапазон координат (+X; -Y)");
+    if(numberRange == 1) Console.WriteLine("Диапазон координат (+Х; +Y)");
+    else if(numberRange == 2) Console.WriteLine("Диапазон координат (-X; +Y)");
+    else if(numberRange == 3) Console.WriteLine("Диапазон координат (-X; -Y)");
+    else if(numberRange == 4) Console.WriteLine("Диапазон координат (+X; -Y)");
 }
-System.Console.WriteLine("Номер плоскости ");
-int numberRange = int.Parse(System.Console.ReadLine()!);
+Console.WriteLine("Номер плоскости ");
+int numberRange = int.Parse(Console.ReadLine()!);
 CoordinateRange(numberRange);
