@@ -66,9 +66,29 @@
 // Задача 35. Задайте одномерный массив из 123 случайных чисел. Найдите количество двухзначных элементов массива.
 // Пример для массива из 5, а не 123 элементов. В своём решении сделайте для 123.
 
+// Console.Clear();
 
-
-
+// void FillArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         array[i] = new Random().Next(0, 1000);
+//     }
+// }
+// int CountDoubleNumbers(int[] array)
+// {
+//     int count = 0;
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if(array[i] >= 10 & array[i] <= 99)
+//             count++;
+//     }
+//     return count;
+// }
+// int[] array = new int[25];
+// FillArray(array);
+// Console.WriteLine("[" + string.Join(", ", array) + "]");
+// Console.WriteLine("Количество двухзначных чисел: " + CountDoubleNumbers(array));
 
 
 // Задача 37. Найдите произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент,
