@@ -15,7 +15,7 @@ for (int i = 0; i < numbers.Length; i += 2)
 {
     sum = sum + numbers[i];
 }
-Console.WriteLine($"Ответ: {sum}");
+Console.WriteLine($"Сумма чисел на нечетных позициях: {sum}");
 
 void FillArrayRndNumbers(int[] numbers)
 {
