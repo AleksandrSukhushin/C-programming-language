@@ -36,19 +36,43 @@
 // со сторонами такой длины.
 // *Теорема о неравенстве треугольника: каждая сторона треугольника меньше суммы двух других сторон.
 
-Console.Clear();
+// Console.Clear();
 
-int[] arrayTriangle = new int[3] { 10, 4, 5 };
+// int[] arrayTriangle = new int[3] { 10, 4, 5 };
 
-bool isTriangle(int[] array)
-{
-    bool flag = true;
-    for (int i = 0; flag && i < array.Length; i++)
-    {
-        flag = arrayTriangle[i] < (array.Sum() - array[i]);
-    }
-    return flag;
-}
-Console.WriteLine(isTriangle(arrayTriangle));
+// bool isTriangle(int[] array)
+// {
+//     bool flag = true;
+//     for (int i = 0; flag && i < array.Length; i++)
+//     {
+//         flag = arrayTriangle[i] < (array.Sum() - array[i]);
+//     }
+//     return flag;
+// }
+// Console.WriteLine(isTriangle(arrayTriangle));
+
 
 // Задача 42. Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+
+int[] NumberTranslation(int[] array)
+{
+    for (int i = 0; i < array.Length / 2; i++)
+    {
+        int temp = array[i];
+        array[i] = array[^(i + 1)];
+        array[^(i + 1)] = temp;
+    }
+    return array;
+}
+
+int[] GetBinaryArray(int a)
+{
+    int[] array = new int[(int)Math.Log2(a) + 1];
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[^(i + 1)] = a % 2;
+        a /= 2;
+    }
+    return array;
+}
+Console.WriteLine(GetBinaryArray(45));
