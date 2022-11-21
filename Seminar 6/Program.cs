@@ -64,7 +64,6 @@ int[] NumberTranslation(int[] array)
     }
     return array;
 }
-
 int[] GetBinaryArray(int a)
 {
     int[] array = new int[(int)Math.Log2(a) + 1];
