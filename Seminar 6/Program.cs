@@ -4,13 +4,10 @@
 // (последний элемент будет на первом месте, а первый - на последнем и тд).
 
 // Console.Clear();
-
 // int[] array = { 1, 2, 3, 4, 5 };
-
 // int[] copyOfArray = CopyRevertArray(array);
 // PrintArray(copyOfArray);
 // PrintArray(array);
-
 // int[] CopyRevertArray(int[] array)
 // {
 //     int[] copy = new int[array.Length];
@@ -29,22 +26,29 @@
 //         array[array.Length - 1 - i] = temp;
 //     }
 // }
-
 // void PrintArray(int[] array)
 // {
 //     System.Console.WriteLine(string.Join(", ", array));
 // }
 
+
 // Задача 40. Напишите программу, которая принимает на вход три числа и проверяет, может ли существоваться треугольник
 // со сторонами такой длины.
 // *Теорема о неравенстве треугольника: каждая сторона треугольника меньше суммы двух других сторон.
 
+Console.Clear();
 
+int[] arrayTriangle = new int[3] { 10, 4, 5 };
 
-
-
-
-
-
+bool isTriangle(int[] array)
+{
+    bool flag = true;
+    for (int i = 0; flag && i < array.Length; i++)
+    {
+        flag = arrayTriangle[i] < (array.Sum() - array[i]);
+    }
+    return flag;
+}
+Console.WriteLine(isTriangle(arrayTriangle));
 
 // Задача 42. Напишите программу, которая будет преобразовывать десятичное число в двоичное.
