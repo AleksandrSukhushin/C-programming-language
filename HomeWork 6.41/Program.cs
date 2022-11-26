@@ -2,14 +2,14 @@
 
 Console.Clear();
 Console.Write("Введите значения, разделяя их запятой: ");
-int[] numbers = StringToNumber(Console.ReadLine());
+int[] numbers = StringNumbers(Console.ReadLine());
 int amount = 0;
 for (int i = 0; i < numbers.Length; i++)
 {
     if (numbers[i] > 0){amount++;}
 }
-Console.WriteLine($"Количество положительных значений: {amount}");
-int[] StringToNumber(string value)
+Console.WriteLine($"Положительных значений: {amount}");
+int[] StringNumbers(string value)
 {
     int count = 1;
     for (int i = 0; i < value.Length; i++)
