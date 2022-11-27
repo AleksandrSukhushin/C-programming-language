@@ -63,6 +63,7 @@
 // }
 // PrintArray(Array);
 
+
 // Задача 49. Задайте двумерный массив. Найдите элементы, у которых оба индекса нечётные, и замените эти элементы на их квадраты.
 // Например, изначально массив
 // выглядел вот так:
@@ -71,3 +72,32 @@
 // 8 4 2 4
 
 Console.Clear();
+
+
+int GetSumElementsArray(int[,] massive)
+{
+    int sumElements = 0;
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if(i == j)
+            {
+                sumElements += massive[i, j];
+            }
+        }
+    }
+    return sumElements;
+}
+
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i, j]}");
+        }
+        Console.WriteLine();
+    }
+}
