@@ -131,58 +131,83 @@
 // 8 встречается 1 раз
 // 9 встречается 3 раза
 
-Console.Clear();
+// Console.Clear();
 
-void FindRepeatElementsInArray(int[,] array)
+// void FindRepeatElementsInArray(int[,] array)
+// {
+//     int rows = array.GetLength(0);
+//     int cols = array.GetLength(1);
+
+//     int element = array[0, 0];
+//     int count = 0;
+//     for (int k = 0; k < rows; k++)
+//     {
+//         for (int i = 0; i < cols; i++)
+//         {
+//             element = array[k, i];
+//             for (int j = 0; j < rows; j++)
+//             {
+//                 for (int m = 0; m < cols; m++)
+//                 {
+//                     if (array[j, m] == element)
+//                     {
+//                         count++;
+//                     }
+//                 }
+//             }
+//             System.Console.WriteLine($"{array[k, i]} встречается {count}");
+//             count = 0;
+//         }
+//     }
+//     System.Console.WriteLine(count);
+// }
+
+// void PrintArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i, j] + "\t");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// int[,] array = new int[,] {{1, 4, 7, 2},
+//                            {5, 9, 2, 3}};
+
+// FindRepeatElementsInArray(array);
+
+
+void SpiralFillArray(int[,] array, int i = 0, int j = 0, int num = 1, int direction = 0)
 {
-    int rows = array.GetLength(0);
-    int cols = array.GetLength(1);
-
-    int element = array[0, 0];
-    int count = 0;
-    for (int k = 0; k < rows; k++)
+    if (i < 0 || i >= array.GetLength(0)
+     || j < 0 || j >= array.GetLength(1)
+     || array[i, j] != 0)
     {
-        for (int i = 0; i < cols; i++)
-        {
-            element = array[k, i];
-            for (int j = 0; j < rows; j++)
-            {
-                for (int m = 0; m < cols; m++)
-                {
-                    if (array[j, m] == element)
-                    {
-                        count++;
-                    }
-                }
-            }
-            System.Console.WriteLine($"{array[k, i]} встречается {count}");
-            count = 0;
-        }
+        return;
     }
-    System.Console.WriteLine(count);
+
+    int[,] step = {
+        { 0, 1, 0, -1 },    // rows (i) -> right, down i+1, left, up i-1
+        { 1, 0, -1, 0 }     // columns (j) -> rigth j+1, down, left j-1, up
+    };
+
+    array[i, j] = num++;
+
+    for (int t = 0; t < 4; t++)
+        {
+        SpiralFillArray(
+            array,
+            i + step[0, (direction + t) % 4],
+            j + step[1, (direction + t) % 4],
+            num,
+            (direction + t) % 4
+        );
+    }
 }
 
-void PrintArray(int[,] array)
-{
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write(array[i, j] + "\t");
-        }
-        Console.WriteLine();
-    }
-}
-
-int[,] array = new int[,] {{1, 4, 7, 2},
-                           {5, 9, 2, 3}};
-
-FindRepeatElementsInArray(array);
-
-
-// Задача 59: Из двумерного массива целых чисел удалить строку и столбец, на пересечении которых расположен наименьший элемент.
-// 1 4 7 2
-// 5 9 2 3
-// 8 4 2 4
-
-// Задача 61: Показать треугольник Паскаля. *Сделать вывод в виде равнобедренного треугольника.
+int[,] array = new int[5, 6];
+SpiralFillArray(array);
+//PrintArray(array);
