@@ -10,6 +10,56 @@
 // 5 9 2 3
 // 1 4 7 2
 
+// Console.Clear();
+
+// int[,] ChangeArray(int[,] array)
+// {
+//     int temp;
+//     int rows = array.GetLength(0);
+//     int cols = array.GetLength(1);
+//     for (int i = 0; i < cols; i++)
+//     {
+//         temp = array[0, i];
+//         array[0, i] = array[rows - 1, i];
+//         array[rows - 1, i] = temp;
+//     }
+//     return array;
+// }
+
+// void PrintArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i, j] + "\t");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// int[,] array = new int[,] {{1, 4, 7, 2},
+//                            {5, 9, 2, 3},
+//                            {8, 4, 2, 4}};
+
+// ChangeArray(array);
+// PrintArray(array);
+
+
+// Задача 55: Задайте двумерный массив. Напишите программу, которая заменяет строки на столбцы. В случае,
+// если это невозможно, программа должна вывести сообщение для пользователя.
+// [nXn]
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 5 2 6 7
+// В итоге получается вот такой массив:
+// 1 5 8 5
+// 4 9 4 2
+// 7 2 2 6
+// 2 3 4 7
+
 Console.Clear();
 
 int[,] ChangeArray(int[,] array)
@@ -17,13 +67,17 @@ int[,] ChangeArray(int[,] array)
     int temp;
     int rows = array.GetLength(0);
     int cols = array.GetLength(1);
+    int[,] arrayCopy = new int[cols, rows];
     for (int i = 0; i < cols; i++)
     {
-        temp = array[0, i];
-        array[0, i] = array[rows - 1, i];
-        array[rows - 1, i] = temp;
+        for (int j = 0; j < cols; j++)
+        {
+             arrayCopy[i, j]= array[j, i];
+            // array[i, j] = array[j, i];
+            // array[j, i] = temp;
+        }
     }
-    return array;
+    return arrayCopy;
 }
 
 void PrintArray(int[,] array)
@@ -40,26 +94,11 @@ void PrintArray(int[,] array)
 
 int[,] array = new int[,] {{1, 4, 7, 2},
                            {5, 9, 2, 3},
-                           {8, 4, 2, 4}};
+                           {8, 4, 2, 4},
+                           {5, 2, 6, 7,}};
 
-ChangeArray(array);
-PrintArray(array);
-
-
-// Задача 55: Задайте двумерный массив. Напишите программу, которая заменяет строки на столбцы. В случае, если это невозможно, программа должна вывести сообщение для пользователя.
-// [nXn]
-// Например, задан массив:
-// 1 4 7 2
-// 5 9 2 3
-// 8 4 2 4
-// 5 2 6 7
-// В итоге получается вот такой массив:
-// 1 5 8 5
-// 4 9 4 2
-// 7 2 2 6
-// 2 3 4 7
-
-
+int[,] copyArray = ChangeArray(array);
+PrintArray(copyArray);
 
 
 
