@@ -9,8 +9,6 @@
 Console.Clear();
 
 int[,,] array = new int[2, 2, 2];
-FillArray(array);
-PrintIndex(array);
 
 void PrintIndex(int[,,] array)
 {
@@ -42,3 +40,6 @@ void FillArray(int[,,] array)
         }
     }
 }
+
+FillArray(array);
+PrintIndex(array);
