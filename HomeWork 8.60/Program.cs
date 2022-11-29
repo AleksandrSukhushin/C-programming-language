@@ -27,7 +27,7 @@ void PrintIndex(int[,,] array)
 
 void FillArray(int[,,] array)
 {
-    int number = 1;
+    int number = 10;
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
